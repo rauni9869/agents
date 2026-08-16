@@ -24,10 +24,21 @@ docrag query "What is the return window for Nexus headphones?" --compare --k 3
 docrag eval
 ```
 
+Open the dashboard:
+
+```bash
+python3 -m docrag serve --host 0.0.0.0 --port 8000
+```
+
+Then open `http://127.0.0.1:8000`
+
+1. Upload PDF / Markdown / TXT (or click **Use sample docs**)
+2. **Run evaluation** — indexes 5 chunkers and scores **hit@1**, **hit@k**, **MRR**, latency
+3. Search a question across all chunkers
+
 API:
 
 ```bash
-docrag serve
 # GET http://127.0.0.1:8000/compare?q=return%20window
 ```
 
