@@ -1,0 +1,62 @@
+[
+  {
+    "id": "q1",
+    "question": "How many working days of paternity leave does Harbor Labs provide?",
+    "answer": "15 working days",
+    "must_include": "Paternity leave is 15 working days"
+  },
+  {
+    "id": "q2",
+    "question": "What is the notice period for individual contributors?",
+    "answer": "60 days",
+    "must_include": "Individual contributors have a 60-day notice period"
+  },
+  {
+    "id": "q3",
+    "question": "What is the notice period for people managers?",
+    "answer": "90 days",
+    "must_include": "People managers (anyone with direct reports in Workday) have a 90-day notice period"
+  },
+  {
+    "id": "q4",
+    "question": "What monthly stipend do interns receive?",
+    "answer": "INR 40,000 per month",
+    "must_include": "stipend of INR 40,000 per month"
+  },
+  {
+    "id": "q5",
+    "question": "From what amount are original GST invoices required for expenses?",
+    "answer": "above INR 750",
+    "must_include": "any expense above INR 750"
+  },
+  {
+    "id": "q6",
+    "question": "Which disk encryption is required on Windows laptops?",
+    "answer": "BitLocker",
+    "must_include": "BitLocker on Windows and FileVault on macOS"
+  },
+  {
+    "id": "q7",
+    "question": "How long do Harbor Gateway MFA push codes last?",
+    "answer": "8 hours",
+    "must_include": "MFA push codes expire in 8 hours"
+  },
+  {
+    "id": "q8",
+    "question": "What is the first-response SLA for a P1 production incident?",
+    "answer": "30 minutes, 24x7",
+    "must_include": "first response in 30 minutes, 24"
+  },
+  {
+    "id": "q9",
+    "question": "How long are access logs retained?",
+    "answer": "18 months",
+    "must_include": "Access logs are retained for 18 months"
+  },
+  {
+    "id": "q10",
+    "question": "Which vendor runs background verification for new hires?",
+    "answer": "AuthBridge",
+    "must_include": "Background verification for new hires is run by AuthBridge"
+  }
+]
