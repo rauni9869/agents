@@ -4,7 +4,7 @@ import argparse
 import json
 
 from docrag.chunking import ALL_STRATEGIES
-from docrag.evaluate import evaluate_strategies
+from docrag.evaluate import evaluate_strategies, load_qa
 from docrag.loaders import load_documents
 from docrag.pipeline import RagEngine
 
@@ -34,7 +34,8 @@ def main(argv: list[str] | None = None) -> None:
     ev = sub.add_parser("eval", help="Retrieval metrics per chunker")
     ev.add_argument("--index", default=".docrag")
     ev.add_argument("--k", type=int, default=3)
-    ev.add_argument("--docs", default="data/samples")
+    ev.add_argument("--docs", default="data/gold")
+    ev.add_argument("--qa", default="data/gold/qa.json")
 
     serve = sub.add_parser("serve", help="Start FastAPI")
     serve.add_argument("--host", default="0.0.0.0")
@@ -62,9 +63,10 @@ def main(argv: list[str] | None = None) -> None:
         return
 
     if args.cmd == "eval":
-        engine.load()
         docs = load_documents(args.docs)
-        print(json.dumps(evaluate_strategies(engine, docs, k=args.k), indent=2))
+        engine.ingest(args.docs)
+        cases = load_qa(args.qa) if args.qa else []
+        print(json.dumps(evaluate_strategies(engine, docs, k=args.k, cases=cases or None), indent=2))
         return
 
     if args.cmd == "serve":

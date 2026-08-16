@@ -32,9 +32,22 @@ python3 -m docrag serve --host 0.0.0.0 --port 8000
 
 Then open `http://127.0.0.1:8000`
 
-1. Upload PDF / Markdown / TXT (or click **Use sample docs**)
-2. **Run evaluation** — indexes 5 chunkers and scores **hit@1**, **hit@k**, **MRR**, latency
-3. Search a question across all chunkers
+1. Upload a **document** (PDF/MD/TXT) and a **gold Q&A** file (`qa.json`)
+2. **Run evaluation** — checks whether the gold **answer** appears in top-k chunks
+3. See hit@1 / hit@k / MRR plus a per-question yes/no grid
+
+Gold Q&A format (`qa.json`):
+
+```json
+[{"id": "q1", "question": "How long is paternity leave?", "answer": "15 working days"}]
+```
+
+Bundled example: `data/gold/harbor-handbook.md` + `data/gold/qa.json` (10 questions).
+
+```bash
+python3 -m docrag ingest data/gold
+python3 -m docrag eval --docs data/gold --qa data/gold/qa.json --k 3
+```
 
 API:
 
