@@ -16,6 +16,15 @@ python custom_agents/run_custom_agent.py dev
 
 When the session ends, metrics are written to `custom_agents/session_metrics.json` (override with `SESSION_METRICS_PATH`).
 
+Offline eval (no LiveKit Cloud / provider keys):
+
+```bash
+PYTHONPATH=. python custom_agents/run_eval_session.py
+```
+
+Latest checked-in output: `custom_agents/session_metrics.results.json`
+
+
 Optional:
 
 ```bash

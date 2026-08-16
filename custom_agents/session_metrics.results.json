@@ -1,0 +1,33 @@
+{
+  "session_duration_s": 21.511,
+  "interruptions": {
+    "fillers_ignored_while_speaking": 5,
+    "fillers_accepted_while_silent": 1,
+    "command_interrupts": 2,
+    "content_interrupts": 2,
+    "user_turns_while_silent": 1,
+    "empty_transcripts": 0,
+    "barge_in_attempts_while_speaking": 9,
+    "false_barge_in_suppression_rate": 0.5556,
+    "valid_barge_in_rate": 0.4444
+  },
+  "pipeline": {
+    "llm_ttft_avg_s": 0.181,
+    "llm_ttft_p95_s": 0.2208,
+    "llm_duration_avg_s": 0.4137,
+    "llm_prompt_tokens": 128,
+    "llm_completion_tokens": 160,
+    "llm_cancelled": 0,
+    "tts_ttfb_avg_s": 0.1583,
+    "tts_ttfb_p95_s": 0.1909,
+    "tts_audio_duration_s": 9.24,
+    "tts_cancelled": 0,
+    "stt_audio_duration_s": 0.0,
+    "eou_delay_avg_s": 0.5008,
+    "transcription_delay_avg_s": 0.201
+  },
+  "run_notes": {
+    "pipeline": "LiveKit AgentSession with fake STT/LLM/TTS/VAD (no cloud API keys in this environment)",
+    "interruptions": "InterruptHandlerMixin replay of a 16-turn call with fillers, stop/wait, and real barge-in"
+  }
+}

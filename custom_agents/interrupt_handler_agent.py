@@ -59,7 +59,7 @@ class InterruptHandlerMixin:
             self._agent_speaking = False
 
         @session.on("user_input_transcribed")
-        async def _on_transcribed(ev):
+        def _on_transcribed(ev):
             is_final = getattr(ev, "is_final", True)
             if not is_final:
                 return
